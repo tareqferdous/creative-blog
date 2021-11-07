@@ -14,7 +14,7 @@ const Users = () => {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
-  }, [users]);
+  }, []);
 
   const createNewPost = () => {
     setNewPost(true);
