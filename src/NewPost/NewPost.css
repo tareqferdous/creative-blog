@@ -1,0 +1,62 @@
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 450px;
+    height: 280px;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.icon .fas{
+    font-size: 22px;
+    color:rgb(54, 54, 54);
+}
+
+.success-btn button{
+    padding: 8px 12px;
+    background: teal;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+input{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid teal;
+}
+
+textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid teal;
+}

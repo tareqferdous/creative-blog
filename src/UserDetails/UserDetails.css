@@ -1,0 +1,46 @@
+.user_card{
+    background: #caf0f8;
+    padding: 20px;
+    border-radius: 5px;
+    display: block;
+    color: initial;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+    transition: .4s ease-in-out;
+}
+
+.user_card:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+}
+
+.user-title{
+    margin-top: 5px;
+    text-transform: capitalize;
+    color: #03071e;
+}
+
+.user-details{
+    margin-top: 10px;
+    color: #14213d;
+}
+
+.view-btn{
+    text-decoration: none;
+}
+
+.blog-img{
+    height: 145px;
+}
+
+.common-btn{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 6px 8px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
