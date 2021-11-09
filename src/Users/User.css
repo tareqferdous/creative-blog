@@ -1,20 +1,21 @@
-.users{
+/* .users{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     align-content: center;
+} */
+
+.users{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .home{
     background-color: #f1faee;
 }
 
-.title{
-    text-align: center;
-    padding: 50px 0;
-    color: #14213d;
-    font-size: 30px;
-}
 
 .sub-title{
     margin: 22px 0;

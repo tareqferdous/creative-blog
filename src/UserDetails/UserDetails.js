@@ -15,17 +15,24 @@ const UserDetails = ({ user }) => {
         alert("Post Deleted Successfully");
       });
   };
+  
+  const postDetails = body.substr(0, 80);
 
   return (
     <div className="user_card">
       <img className="blog-img" src={blogImg} alt={title} />
       <h3 className="user-title">{title}</h3>
-      <p className="user-details">{body}</p>
-      <Link to={`/users/${id}`}>
+      <p className="user-details">{postDetails}</p>
+      
+      <div className="card-footer">
+      <div className="view">
+      <Link style={{textDecoration: 'none'}} to={`/users/${id}`}>
         <button style={{ background: "#34a0a4" }} className="common-btn">
           View Post
         </button>
       </Link>
+      </div>
+      <div className="delete">
       <button
         style={{ background: "#e63946" }}
         className="common-btn"
@@ -33,6 +40,8 @@ const UserDetails = ({ user }) => {
       >
         Delete Post
       </button>
+      </div>
+      </div>
     </div>
   );
 };
