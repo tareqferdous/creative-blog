@@ -12,7 +12,7 @@ const UserDetails = ({ user }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        alert("Post Deleted Successfully");
+        alert("Post Deleted Successfully.");
       });
   };
 
