@@ -17,8 +17,13 @@
     border-radius: 5px;
     flex-direction: column;
     background: #caf0f8;
+<<<<<<< HEAD
     box-shadow: rgba(0, 0, 0, 0.4);
     padding: 10px 20px;
+=======
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+    padding: 20px 20px;
+>>>>>>> main
     align-self: normal;
     align-items: center;
     transition: .4s ease-in-out;
@@ -42,7 +47,11 @@
 
 
 .blog-img{
+<<<<<<< HEAD
     max-width: 250px;
+=======
+    max-width: 240px;
+>>>>>>> main
 }
 
 .card-footer{

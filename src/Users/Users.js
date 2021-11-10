@@ -41,11 +41,7 @@ const Users = () => {
             <h3 className="sub-title">Most Recent Posts</h3>
           </div>
           <div>
-            <button
-              style={{ margin: "0 10px" }}
-              className="create-btn"
-              onClick={() => createNewPost()}
-            >
+            <button style={{margin: '0 10px'}} className="create-btn" onClick={() => createNewPost()}>
               Create New Post
             </button>
             <button className="create-btn" onClick={() => setModalIsOpen(true)}>
@@ -55,26 +51,10 @@ const Users = () => {
         </div>
 
         {/* Reuseable modal  */}
-        <CommonModal isOpen={modalIsOpen} close={() => setModalIsOpen(false)}>
-          <h2 style={{ color: "#e63946" }}>Common Modal</h2>
-          <p style={{ margin: "20px 0", color: "#264653" }}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, non!
-            Sequi fuga, at accusamus architecto aut rem autem numquam
-            voluptatibus!
-          </p>
-          <button
-            onClick={() => setModalIsOpen(false)}
-            style={{
-              padding: "7px 10px",
-              border: "none",
-              background: "#e63946",
-              cursor: "pointer",
-              color: "#fff",
-              borderRadius: "3px",
-            }}
-          >
-            Close
-          </button>
+        <CommonModal isOpen={modalIsOpen} close={()=> setModalIsOpen(false)} >
+        <h2 style={{color: '#e63946'}}>Common Modal</h2>
+        <p style={{margin: '20px 0', color: '#264653'}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, non! Sequi fuga, at accusamus architecto aut rem autem numquam voluptatibus!</p>
+        <button onClick={()=> setModalIsOpen(false)} style={{padding: '7px 10px', border: 'none', background: '#e63946', cursor: 'pointer',color: '#fff', borderRadius: '3px'}}>Close</button>
         </CommonModal>
 
         {/* all posts */}

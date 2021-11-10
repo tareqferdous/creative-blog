@@ -1,19 +1,22 @@
 .blog-image{
     width: 500px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .blog{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 200px;
 }
 
 .blog-info{
-    margin-left: 20px;
-    margin-top: 20px;
+    display: block;
+    width: 50%;
 }
 
 .backBtn{
@@ -38,20 +41,22 @@
     .blog{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    }
+
+    .blog-img{
+        display: block;
+        margin: 0 auto;
     }
 
     .blog-image{
-        width: 450px;
+        width: 350px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-        display: block;
         margin-bottom: 10px;
         margin-top: -50px;
     }
 
     .blog-title{
-        margin-top: 70px;
+        margin-top: 30px;
     }
 }
 
@@ -64,7 +69,7 @@
     }
 
     .blog-image{
-        width: 90%;
+        width: 400px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
         display: block;
         margin-bottom: 10px;
@@ -85,14 +90,34 @@
     }
 
     .blog-image{
-        width: 90%;
+        width: 500px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
         display: block;
-        margin-bottom: 10px;
-        margin-top: -150px;
+        margin-left: -100px;
     }
 
     .blog-title{
-        margin-top: 130px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1100px){
+    .blog{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .blog-image{
+        width: 400px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+        display: block;
+        margin-left: -100px;
+    }
+
+
+    .blog-info{
+        margin-left: 100px;
     }
 }

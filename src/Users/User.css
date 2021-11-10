@@ -9,7 +9,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+<<<<<<< HEAD
     justify-content: space-between;
+=======
+    justify-content:space-between;
+>>>>>>> main
 }
 
 .home{

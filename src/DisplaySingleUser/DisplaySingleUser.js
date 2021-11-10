@@ -32,4 +32,4 @@ const DisplaySingleUser = () => {
   );
 };
 
-export default DisplaySingleUser;
+export default React.memo(DisplaySingleUser);
