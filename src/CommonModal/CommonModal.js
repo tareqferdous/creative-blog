@@ -5,12 +5,12 @@ const CommonModal = ({isOpen, close, children}) => {
     if (!isOpen) return null;
 
     return (
-        <div className="popup">
+        <div className="modal">
             <div className="overlay"></div>
             <div className="content">
             <div className="wrap">
               <div className="post-title">
-                <h3>Create A New Post</h3>
+                <h3>Welcome to our site</h3>
               </div>
               <div className="icon">
                 <i
