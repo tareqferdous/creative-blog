@@ -1,26 +1,14 @@
-<<<<<<< HEAD
-.modal-bg .overlay {
-=======
 .modal .overlay{
->>>>>>> main
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100vw;
     height: 100vh;
-<<<<<<< HEAD
-    background: rgba(185, 182, 182, 0.7);
-    z-index: 1;
-}
-
-.modal-bg .content{
-=======
     background: rgba(207, 207, 207, 0.7);
     z-index: 1;
 }
 
 .modal .content{
->>>>>>> main
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,12 +26,4 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-top: 20px;
-<<<<<<< HEAD
-}
-
-.icon .fas{
-    font-size: 22px;
-    color:rgb(54, 54, 54);
-=======
->>>>>>> main
 }

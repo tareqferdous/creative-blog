@@ -1,18 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./DisplaySingleUser.css";
 import blogImg from "../image/blog.png";
 import { Link } from "react-router-dom";
+import UserContext from "../UserContext";
 
 const DisplaySingleUser = () => {
-  const [singleUser, setSingleUser] = useState({});
+  // const [singleUser, setSingleUser] = useState({});
   const { id } = useParams();
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then((res) => res.json())
-      .then((data) => setSingleUser(data));
-  }, [id]);
+  const[posts, setPosts] = useContext(UserContext);
+
+  const singleUser = posts[id];
+  
+
+
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setSingleUser(data));
+  // }, [id]);
 
   return (
     <div className="container">

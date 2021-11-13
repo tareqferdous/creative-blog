@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import UserDetails from "../UserDetails/UserDetails";
 import "../App.css";
 import "./User.css";
 import NewPost from "../NewPost/NewPost";
 import ReactPaginate from "react-paginate";
 import CommonModal from "../CommonModal/CommonModal";
+import UserContext from "../UserContext";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useContext(UserContext);
+  // const [users, setUsers] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [newPost, setNewPost] = useState(false);
   const [pageNumber, setPageNumber] = useState(0);
@@ -15,7 +17,7 @@ const Users = () => {
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => res.json())
-      .then((data) => setUsers(data));
+      .then((data) => setPosts(data));
   }, []);
 
   const createNewPost = () => {
@@ -25,9 +27,9 @@ const Users = () => {
   const postPerPage = 20;
   const pageVisited = pageNumber * postPerPage;
 
-  const displayPosts = users.slice(pageVisited, pageVisited + postPerPage);
+  const displayPosts = posts.slice(pageVisited, pageVisited + postPerPage);
 
-  const pageCount = Math.ceil(users.length / postPerPage);
+  const pageCount = Math.ceil(posts.length / postPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
