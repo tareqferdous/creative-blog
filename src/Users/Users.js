@@ -14,11 +14,11 @@ const Users = () => {
   const [newPost, setNewPost] = useState(false);
   const [pageNumber, setPageNumber] = useState(0);
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts`)
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/posts`)
+  //     .then((res) => res.json())
+  //     .then((data) => setPosts(data));
+  // }, []);
 
   const createNewPost = () => {
     setNewPost(true);
