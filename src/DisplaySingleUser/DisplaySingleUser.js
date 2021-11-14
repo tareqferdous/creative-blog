@@ -6,20 +6,14 @@ import { Link } from "react-router-dom";
 import UserContext from "../UserContext";
 
 const DisplaySingleUser = () => {
-  // const [singleUser, setSingleUser] = useState({});
+  const [singleUser, setSingleUser] = useState({});
   const { id } = useParams();
-
-  const[posts, setPosts] = useContext(UserContext);
-
-  const singleUser = posts[id];
   
-
-
-  // useEffect(() => {
-  //   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setSingleUser(data));
-  // }, [id]);
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((res) => res.json())
+      .then((data) => setSingleUser(data));
+  }, []);
 
   return (
     <div className="container">

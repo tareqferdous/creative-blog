@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import UserContext from "../UserContext";
 import "./NewPost.css";
 
 const NewPost = ({ newPost, setNewPost }) => {
+  const [posts, setPosts] = useContext(UserContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -21,10 +23,11 @@ const NewPost = ({ newPost, setNewPost }) => {
     })
       .then((res) => res.json())
       .then((success) => {
-        setNewPost(false);
-        alert("Post Created Successfully");
+        const postId = postData.title;
+        console.log(postId)
+        // setNewPost(false);
+        // alert("Post Created Successfully");
       });
-    console.log(postData);
   };
 
   const closeNewPost = () => {
