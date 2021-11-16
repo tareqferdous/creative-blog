@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 const Modal = () => {
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState();
 
     const handleOpenModal = () => {
         setOpenModal(true);
+        console.log('working')
     }
 
      const handleCloseModal = () => {

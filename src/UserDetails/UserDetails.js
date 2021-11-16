@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import blogImg from "../image/blog.png";
+import UserContext from "../UserContext";
 import "./UserDetails.css";
 
 const UserDetails = ({ user }) => {
   const { id, title, body } = user;
+  const {post, toggle} = useContext(UserContext);
+  const [postData, setPostData] = toggle;
 
   const deletePost = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -12,6 +16,7 @@ const UserDetails = ({ user }) => {
       .then((res) => res.json())
       .then((result) => {
         alert("Post Deleted Successfully");
+        setPostData(!postData);
       });
   };
   

@@ -7,15 +7,23 @@ import Home from "./Users/Home/Home";
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [postData, setPostData] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const toggleModal = () => setOpenModal(openModal => !openModal);
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => res.json())
       .then((data) => setPosts(data));
-  }, []);
+  }, [postData]);
 
   return (
-    <UserProvider value={[posts, setPosts]}>
+    <UserProvider 
+    value={{post:[posts, setPosts], 
+    toggle:[postData, setPostData],
+    modal: [openModal, toggleModal]
+    }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -9,13 +9,15 @@ import UserContext from "../UserContext";
 import Modal from "../CommonModal/Modal";
 
 const Users = () => {
-  const [posts, setPosts] = useContext(UserContext);
+  const {post, toggle, modal} = React.useContext(UserContext);
+  const [posts, setPosts] = post;
+  const [openModal, toggleModal] = modal;
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [newPost, setNewPost] = useState(false);
   const [pageNumber, setPageNumber] = useState(0);
 
-  const {handleOpenModal} = Modal();
-  console.log(handleOpenModal)
+  // const {handleOpenModal} = Modal();
+  // console.log(handleOpenModal)
 
   const createNewPost = () => {
     setNewPost(true);
@@ -43,7 +45,10 @@ const Users = () => {
             <button style={{margin: '0 10px'}} className="create-btn" onClick={() => createNewPost()}>
               Create New Post
             </button>
-            <button className="create-btn" onClick={handleOpenModal}>
+            <button className="create-btn" 
+            // onClick={handleOpenModal}
+            onClick={toggleModal}
+            >
               Common Modal
             </button>
           </div>

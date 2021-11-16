@@ -1,9 +1,12 @@
 import React from "react";
+import UserContext from "../UserContext";
 import "./CommonModal.css";
 import Modal from "./Modal";
 
 const CommonModal = ({ children }) => {
-  const { openModal, handleCloseModal } = Modal();
+  // const { openModal, handleCloseModal } = Modal();
+  const {modal} = React.useContext(UserContext);
+  const [openModal, toggleModal] = modal;
 
   return (
     <>
@@ -18,7 +21,8 @@ const CommonModal = ({ children }) => {
               <div className="icon">
                 <i
                   style={{ cursor: "pointer" }}
-                  onClick={handleCloseModal}
+                  onClick={toggleModal}
+                  // onClick={handleCloseModal}
                   class="fas fa-times"
                 ></i>
               </div>

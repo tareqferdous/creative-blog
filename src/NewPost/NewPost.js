@@ -4,7 +4,8 @@ import UserContext from "../UserContext";
 import "./NewPost.css";
 
 const NewPost = ({ newPost, setNewPost }) => {
-  const [posts, setPosts] = useContext(UserContext);
+  const {post, toggle} = useContext(UserContext);
+  const [postData, setPostData] = toggle;
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -23,10 +24,9 @@ const NewPost = ({ newPost, setNewPost }) => {
     })
       .then((res) => res.json())
       .then((success) => {
-        const postId = postData.title;
-        console.log(postId)
-        // setNewPost(false);
-        // alert("Post Created Successfully");
+        setNewPost(false);
+        alert("Post Created Successfully");
+        setPostData(!postData)
       });
   };
 
