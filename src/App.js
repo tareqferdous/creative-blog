@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DisplaySingleUser from "./DisplaySingleUser/DisplaySingleUser";
+import contextValue from "./GlobalComp/GlobalComp";
 import Login from "./Login/Login/Login";
 import Register from "./Login/Register/Register";
 import NewPost from "./NewPost/NewPost";
@@ -25,10 +26,11 @@ function App() {
     <UserProvider 
     value={{post:[posts, setPosts], 
     toggle:[postData, setPostData],
-    modal: [openModal, toggleModal]
+    modal: [openModal, toggleModal],
+    sidebar: contextValue
     }}>
       <BrowserRouter>
-      <Sidebar />
+      {/* <Sidebar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
