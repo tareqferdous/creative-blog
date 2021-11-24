@@ -1,9 +1,23 @@
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import blogImg from "../image/blog.png";
+import UserContext from "../UserContext";
 import "./UserDetails.css";
+import 'react-toastify/dist/ReactToastify.css';
+import Snackbar from "../Snackbar/Snackbar";
+
 
 const UserDetails = ({ user }) => {
   const { id, title, body } = user;
+  const {toggle} = useContext(UserContext);
+  const [postData, setPostData] = toggle;
+
+  const SnackbarType = {
+    success: "success",
+    fail: "fail",
+  };
+  
+  const snackbarRef = useRef(null);
 
   const deletePost = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -11,7 +25,8 @@ const UserDetails = ({ user }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        alert("Post Deleted Successfully");
+        setPostData(!postData);
+        snackbarRef.current.show();
       });
   };
   
@@ -41,6 +56,13 @@ const UserDetails = ({ user }) => {
       </button>
       </div>
       </div>
+
+      {/* notification */}
+      <Snackbar
+        ref={snackbarRef}
+        message="Post Deleted!"
+        type={SnackbarType.fail}
+      />
     </div>
   );
 };
