@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./DisplaySingleUser.css";
 import blogImg from "../image/blog.png";
 import { Link } from "react-router-dom";
-import UserContext from "../UserContext";
 
 const DisplaySingleUser = () => {
   const [singleUser, setSingleUser] = useState({});

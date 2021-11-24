@@ -39,18 +39,18 @@ const Users = () => {
       <div className="container">
         <div className="wrap">
           <div>
-            <h3 className="sub-title">Most Recent Posts</h3>
+            <h3 style={{marginTop: '5px', marginLeft: '5px'}} className="sub-title">Most Recent Posts</h3>
           </div>
           <div>
-            <button style={{margin: '0 10px'}} className="create-btn" onClick={() => createNewPost()}>
+            <button style={{margin: '0px 10px'}} className="create-btn" onClick={() => createNewPost()}>
               Create New Post
             </button>
-            <button className="create-btn" 
+            {/* <button className="create-btn" 
             // onClick={handleOpenModal}
             onClick={toggleModal}
             >
               Common Modal
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -81,6 +81,8 @@ const Users = () => {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
         />
+
+     
       </div>
     </section>
   );

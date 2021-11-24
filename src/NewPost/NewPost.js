@@ -1,12 +1,24 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import UserContext from "../UserContext";
 import "./NewPost.css";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Snackbar from "../Snackbar/Snackbar";
+
+toast.configure()
 
 const NewPost = ({ newPost, setNewPost }) => {
   const {post, toggle} = useContext(UserContext);
   const [postData, setPostData] = toggle;
   const { register, handleSubmit } = useForm();
+
+  const SnackbarType = {
+    success: "success",
+    fail: "fail",
+  };
+  
+  const snackbarRef = useRef(null);
 
   const onSubmit = (data) => {
     const postData = {
@@ -25,8 +37,8 @@ const NewPost = ({ newPost, setNewPost }) => {
       .then((res) => res.json())
       .then((success) => {
         setNewPost(false);
-        alert("Post Created Successfully");
         setPostData(!postData)
+        snackbarRef.current.show();
       });
   };
 
@@ -92,6 +104,12 @@ const NewPost = ({ newPost, setNewPost }) => {
           </div>
         </div>
       )}
+
+      <Snackbar
+        ref={snackbarRef}
+        message="Post Created Successfully!"
+        type={SnackbarType.success}
+      />
     </>
   );
 };

@@ -24,10 +24,10 @@
     transition: .4s ease-in-out;
 }
 
-.user_card:hover{
+/* .user_card:hover{
     transform: translateY(-10px);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-}
+} */
 
 .user-title{
     margin: 10px 0;
