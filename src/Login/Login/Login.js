@@ -1,22 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useLocation } from "react-router";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import './Login.css'
+import { addToDb } from "../../LocalStorage/LocalStorage";
+import UserContext from "../../UserContext";
+import "./Login.css";
 
 const Login = () => {
-    const [loginData, setLoginData] = useState({})
+  const { login } = useContext(UserContext);
+  const [loginData, setLoginData] = login;
 
-    const handleOnChange = (e) => {
-        const field = e.target.name;
-        const value =  e.target.value;
-        const newLoginData = {...loginData};
-        newLoginData[field] = value;
-        setLoginData(loginData);
-    }
-    
-    const handleLoginSubmit = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-        e.preventDefault();
-    }
+  const history = useHistory();
+  const location = useLocation();
+
+  let {from} = location.state || { from: {pathname: "/"}};
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    const newLoginData = { email: email, password: password };
+    setLoginData({...loginData, newLoginData});
+    addToDb('user-info', newLoginData?.email);
+    history.replace(from);
+    console.log(loginData);
+  };
 
   return (
     <div className="body">
@@ -24,20 +34,37 @@ const Login = () => {
         <h1>Login</h1>
         <form onSubmit={handleLoginSubmit} method="post">
           <div class="txt_field">
-            <input onSubmit={handleOnChange} name="email" type="email" required />
-            <span></span>
-            <label>Email</label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              autocomplete="off"
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
           </div>
           <div class="txt_field">
-            <input onSubmit={handleOnChange} name="password" type="password" required />
-            <span></span>
-            <label>Password</label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              autocomplete="off"
+              name="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
           </div>
           <input type="submit" value="Login" />
           <div class="signup_link">
             Not a member? <Link to="/register">Signup</Link>
+           
           </div>
         </form>
+        
+      </div>
+      <div>
+        <p>{loginData?.newLoginData?.email}</p>
       </div>
     </div>
   );

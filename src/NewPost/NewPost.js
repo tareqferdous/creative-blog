@@ -2,11 +2,8 @@ import React, { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import UserContext from "../UserContext";
 import "./NewPost.css";
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Snackbar from "../Snackbar/Snackbar";
 
-toast.configure()
 
 const NewPost = ({ newPost, setNewPost }) => {
   const {post, toggle} = useContext(UserContext);

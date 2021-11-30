@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Sidebar from "../../Sidebar/Sidebar";
 import Users from "../Users";
 import "./Home.css";
 import "../../Sidebar/Sidebar.css"
