@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useLocation } from "react-router";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { addToDb } from "../../LocalStorage/LocalStorage";
+import { addToDb } from "../../shared/LocalStorage/LocalStorage";
 import UserContext from "../../UserContext";
 import "./Login.css";
 

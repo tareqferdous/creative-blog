@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import UserDetails from "../UserDetails/UserDetails";
-import "../App.css";
+import "../../App.css";
 import "./User.css";
 import NewPost from "../NewPost/NewPost";
 import ReactPaginate from "react-paginate";
 import CommonModal from "../CommonModal/CommonModal";
-import UserContext from "../UserContext";
+import UserContext from "../../UserContext";
 import Modal from "../CommonModal/Modal";
 import { Link } from "react-router-dom";
 

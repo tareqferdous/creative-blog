@@ -1,8 +1,8 @@
 import React, { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
-import UserContext from "../UserContext";
 import "./NewPost.css";
-import Snackbar from "../Snackbar/Snackbar";
+import UserContext from "../../UserContext";
+import Snackbar from "../../shared/Snackbar/Snackbar";
 
 
 const NewPost = ({ newPost, setNewPost }) => {
