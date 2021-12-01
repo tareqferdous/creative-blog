@@ -1,10 +1,10 @@
 import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
-import blogImg from "../image/blog.png";
-import UserContext from "../UserContext";
+import blogImg from "../../image/blog.png";
 import "./UserDetails.css";
 import 'react-toastify/dist/ReactToastify.css';
-import Snackbar from "../Snackbar/Snackbar";
+import Snackbar from "../../shared/Snackbar/Snackbar";
+import UserContext from "../../UserContext";
 
 
 const UserDetails = ({ user }) => {

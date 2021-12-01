@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import DisplaySingleUser from "./DisplaySingleUser/DisplaySingleUser";
-import contextValue from "./GlobalComp/GlobalComp";
-import Login from "./Login/Login/Login";
-import Register from "./Login/Register/Register";
-import NewPost from "./NewPost/NewPost";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import DisplaySingleUser from "./component/DisplaySingleUser/DisplaySingleUser";
+
+import contextValue from "./shared/GlobalComp/GlobalComp";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import NewPost from "./component/NewPost/NewPost";
+import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
 import { UserProvider } from "./UserContext";
-import Home from "./Users/Home/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [posts, setPosts] = useState([]);

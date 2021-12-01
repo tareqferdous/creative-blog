@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NewPost from "../NewPost/NewPost";
-import UserContext from "../UserContext";
+import NewPost from "../../component/NewPost/NewPost";
+
 import "./Sidebar.css";
 import { IconContext } from "react-icons";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import UserContext from "../../UserContext";
 
 const Sidebar = () => {
   const [newPost, setNewPost] = useState(false);

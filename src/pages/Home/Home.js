@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Users from "../Users";
+import Users from "../../component/Users/Users";
 import "./Home.css";
-import "../../Sidebar/Sidebar.css"
+import "../../shared/Sidebar/Sidebar.css"
 import UserContext from "../../UserContext";
 
 const Home = () => {
